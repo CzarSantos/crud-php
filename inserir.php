@@ -1,56 +1,94 @@
 <?php
-
 include('protect.php');
-
-
 ?>
 
 
-<h1>Cadastro</h1>
-</font>
-<font size=5></font>
 
-<div class="box-home">
-    <a href="index.php">Home</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<form name=" " method="post" action="">
-    <label for="txtnome">Nome</label>
-    <input type="text" name="txtnome" size="40" maxlength="40"><br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard </title>
+</head>
 
-    <label for="txtendereco">Endereço</label>
-    <input type="text" name="txtendereco" size="40" maxlength="40"><br>
+<body>
+    <header>
+        <div class="btn-open"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+        <div class="btn-close"><i id='close' class="fa-solid fa-xmark"></i></div>
 
-    <label for="txtfone">Telefone</label>
-    <input type="text" name="txtfone" size="15" maxlength="15"><br>
+        <h1>Cad User |</h1>
 
-    <label for="txtemail">Email</label>
-    <input type="text" name="txtemail" size="50" maxlength="50"><br>
-    <input type="submit" name="btngravar" value="Gravar">
-    <input type="submit" name="btnlistar" value="Listar">
-</form>
+    </header>
+
+    <nav class="menu">
+
+        <div class="img">
+            <img src="https://img.freepik.com/vetores-premium/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt="">
+        </div>
+        <span class="in">Olá! <?php echo $_SESSION['nome']; ?></span>
+
+        <ul>
+
+            <li><a href="index.php">Home</a> </li>
+            <li><a class="ativoli" href="inserir.php">Cadastrar</a> </li>
+            <li><a href="listagem2.php">Listar</a> </li>
+            <li><a href="alterar.php">Alterar</a> </li>
+            <li><a href="excluir.php">Excluir</a> </li>
+        </ul>
+
+        <span class="out"><a href="logout.php">Sair</a></span>
+    </nav>
 
 
-<?php
-if (!empty($_REQUEST['txtnome'])) {
-    $nome = $_REQUEST['txtnome'];
-    $endereco = $_REQUEST['txtendereco'];
-    $fone = $_REQUEST['txtfone'];
-    $email = $_REQUEST['txtemail'];
-    include("conectar.php"); //conectar banco
-    $sql = "insert into registros (nome,endereco,fone,email) values('$nome','$endereco','$fone','$email')";
-    $result = mysqli_query($con, $sql);
-    echo "<script>alert('Dados gravados com sucesso')</script>";
-    mysqli_close($con);/* Fecha conexão */
-}
-if (isset($_POST['btnlistar']))/* Verifica se clicou */ {
-    header('Location:listagem2.php');/* chamando outra aba */
-}
-?>
+    <form name=" " method="post" action="">
+        <label for="txtnome">Nome</label>
+        <input type="text" name="txtnome" size="40" maxlength="40"><br>
+
+        <label for="txtendereco">Endereço</label>
+        <input type="text" name="txtendereco" size="40" maxlength="40"><br>
+
+        <label for="txtfone">Telefone</label>
+        <input type="text" name="txtfone" size="15" maxlength="15"><br>
+
+        <label for="txtemail">Email</label>
+        <input type="text" name="txtemail" size="50" maxlength="50"><br>
+        <input type="submit" name="btngravar" value="Gravar">
+        <input type="submit" name="btnlistar" value="Listar">
+    </form>
+
+
+    <?php
+    if (!empty($_REQUEST['txtnome'])) {
+        $nome = $_REQUEST['txtnome'];
+        $endereco = $_REQUEST['txtendereco'];
+        $fone = $_REQUEST['txtfone'];
+        $email = $_REQUEST['txtemail'];
+        include("conectar.php"); //conectar banco
+        $sql = "insert into registros (nome,endereco,fone,email) values('$nome','$endereco','$fone','$email')";
+        $result = mysqli_query($con, $sql);
+        echo "<script>alert('Dados gravados com sucesso')</script>";
+        mysqli_close($con);/* Fecha conexão */
+    }
+    if (isset($_POST['btnlistar']))/* Verifica se clicou */ {
+        header('Location:listagem2.php');/* chamando outra aba */
+    }
+    ?>
+
+</body>
+
+</html>
+
+<script src="app.js"></script>
+<script src="https://kit.fontawesome.com/2b0612ebbf.js" crossorigin="anonymous"></script>
 
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,700;0,800;0,900;1,400&display=swap');
+
+    @import "menu.css";
 
     * {
 
@@ -58,22 +96,13 @@ if (isset($_POST['btnlistar']))/* Verifica se clicou */ {
         padding: 0;
         box-sizing: border-box;
         font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
         background: rgb(80, 93, 255);
         background: linear-gradient(98deg, rgba(80, 93, 255, 1) 24%, rgba(180, 12, 162, 1) 100%);
     }
 
-    h1 {
-        color: white;
-        font-weight: 800;
-        background: #0F0F0F;
-        padding: 10px;
-        text-align: center;
-
-        width: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-    }
 
     form {
         max-width: 600px;
@@ -117,33 +146,5 @@ if (isset($_POST['btnlistar']))/* Verifica se clicou */ {
         display: block;
         font-weight: 600;
 
-    }
-
-
-    .box-home {
-        position: fixed;
-        width: 100px;
-        height: 100px;
-        left: 10px;
-        top: 100px;
-        border-radius: 50px;
-        background: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .box-home a {
-        padding: 10px;
-        text-decoration: none;
-        outline: none;
-        display: block;
-        color: #fff;
-        background: #000;
-    }
-
-    .box-home a:hover {
-        border-radius: 5px;
-        color: rgb(80, 93, 255);
     }
 </style>
