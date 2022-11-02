@@ -97,13 +97,17 @@ ul li .ativoli {
 
 .menu ul li {
   list-style: none;
-  color: #000;
+  color: rgb(0, 0, 0);
+  
 }
 
 .menu ul li a {
   display: block;
   text-decoration: none;
   padding: 15px 10px;
+  font-weight: 300;
+  
+  
 }
 
 .menu ul li a:hover {

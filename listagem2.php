@@ -13,6 +13,54 @@ include('protect.php');
     <title>Dashboard </title>
 </head>
 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,700;0,800;0,900;1,400&display=swap');
+
+    @import "menu.css";
+
+    * {
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+    body {
+        background: #1B1D20;
+        /* background: rgb(80, 93, 255);
+        background: linear-gradient(98deg, rgba(80, 93, 255, 1) 24%, rgba(180, 12, 162, 1) 100%); */
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        width: 800px;
+        display: flex;
+        padding: 80px 10px;
+        overflow-x: auto;
+
+    }
+
+    table {
+        width: 100%;
+
+
+    }
+
+    th,
+    td,
+    tr {
+        padding: 10px;
+        background: #0F0F0F;
+        color: #fff;
+        border-radius: 3px;
+
+
+    }
+</style>
+
 <body>
     <header>
         <div class="btn-open"><i class="fa-solid fa-ellipsis-vertical"></i></div>
@@ -80,49 +128,3 @@ include('protect.php');
 
 <script src="app.js"></script>
 <script src="https://kit.fontawesome.com/2b0612ebbf.js" crossorigin="anonymous"></script>
-
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,700;0,800;0,900;1,400&display=swap');
-
-    @import "menu.css";
-
-    * {
-
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Montserrat', sans-serif;
-
-    }
-
-    body {
-        background: rgb(80, 93, 255);
-        background: linear-gradient(98deg, rgba(80, 93, 255, 1) 24%, rgba(180, 12, 162, 1) 100%);
-    }
-
-    .container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 80px 20px;
-
-    }
-
-    table {
-        width: 920px;
-        overflow-x: scroll;
-
-    }
-
-    th,
-    td,
-    tr {
-        padding: 10px;
-        background: #0F0F0F;
-        color: #fff;
-        border-radius: 3px;
-
-
-    }
-</style>

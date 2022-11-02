@@ -14,6 +14,75 @@ include('protect.php');
     <title>Dashboard </title>
 </head>
 
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,700;0,800;0,900;1,400&display=swap');
+
+    @import "menu.css";
+
+    * {
+
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+
+        background: #1B1D20;
+        /* background: rgb(80, 93, 255);
+        background: linear-gradient(98deg, rgba(80, 93, 255, 1) 24%, rgba(180, 12, 162, 1) 100%); */
+    }
+
+
+    form {
+        max-width: 600px;
+        height: auto;
+        background: #fff;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 80px auto 50px auto;
+    }
+
+    input[type='text'] {
+        background: #E8F0FE;
+        margin: 5px 0;
+        border: none;
+        outline: none;
+        padding: 8px;
+        display: block;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 350px;
+
+    }
+
+    input[type='submit'] {
+        background: #000;
+        color: #fff;
+        margin: 5px 0;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 8px 15px;
+        width: fit-content;
+        border-radius: 5px;
+    }
+
+    input[type='submit']:hover {
+        background: #ddd;
+        color: #000;
+    }
+
+    label {
+        background: #fff;
+        display: block;
+        font-weight: 600;
+
+    }
+</style>
+
 <body>
     <header>
         <div class="btn-open"><i class="fa-solid fa-ellipsis-vertical"></i></div>
@@ -83,68 +152,3 @@ include('protect.php');
 
 <script src="app.js"></script>
 <script src="https://kit.fontawesome.com/2b0612ebbf.js" crossorigin="anonymous"></script>
-
-
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,700;0,800;0,900;1,400&display=swap');
-
-    @import "menu.css";
-
-    * {
-
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-        background: rgb(80, 93, 255);
-        background: linear-gradient(98deg, rgba(80, 93, 255, 1) 24%, rgba(180, 12, 162, 1) 100%);
-    }
-
-
-    form {
-        max-width: 600px;
-        height: auto;
-        background: #fff;
-        margin: auto;
-        padding: 20px;
-        border-radius: 10px;
-        margin: 80px auto 50px auto;
-    }
-
-    input[type='text'] {
-        background: #E8F0FE;
-        margin: 5px 0;
-        border: none;
-        outline: none;
-        padding: 8px;
-        display: block;
-        border-radius: 5px;
-    }
-
-    input[type='submit'] {
-        background: #000;
-        color: #fff;
-        margin: 5px 0;
-        border: none;
-        cursor: pointer;
-        outline: none;
-        padding: 8px 15px;
-        width: fit-content;
-        border-radius: 5px;
-    }
-
-    input[type='submit']:hover {
-        background: #ddd;
-        color: #000;
-    }
-
-    label {
-        background: #fff;
-        display: block;
-        font-weight: 600;
-
-    }
-</style>

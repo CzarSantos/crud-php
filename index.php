@@ -29,18 +29,35 @@ include('protect.php');
 
   }
 
+  body {
+    background: #1B1D20;
+    /* background: rgb(80, 93, 255);
+        background: linear-gradient(98deg, rgba(80, 93, 255, 1) 24%, rgba(180, 12, 162, 1) 100%); */
+  }
+
   .container {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+
     padding: 50px 20px;
-    background: rgb(80, 93, 255);
-    background: linear-gradient(98deg, rgba(80, 93, 255, 1) 24%, rgba(180, 12, 162, 1) 100%);
     position: relative;
+  }
+
+  .content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (max-width:461px) {
+    .content {
+      margin: 30px 0px;
+    }
+
   }
 
   .box {
@@ -113,30 +130,32 @@ include('protect.php');
     </nav>
 
 
-    <div class="box">
-      <a href="inserir.php">
-        <i class="fa-solid fa-id-card"></i>
-        <h2>Cadastrar</h2>
-      </a>
-    </div>
-    <div class="box">
-      <a href="listagem2.php">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <h2>Consultar</h2>
-      </a>
+    <div class="content">
+      <div class="box">
+        <a href="inserir.php">
+          <i class="fa-solid fa-id-card"></i>
+          <h2>Cadastrar</h2>
+        </a>
+      </div>
+      <div class="box">
+        <a href="listagem2.php">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <h2>Consultar</h2>
+        </a>
 
-    </div>
-    <div class="box">
-      <a href="alterar.php">
-        <i class="fa-solid fa-file-invoice"></i>
-        <h2>Alterar</h2>
-      </a>
-    </div>
-    <div class="box">
-      <a href="">
-        <i class="fa-solid fa-trash"></i>
-        <h2>Excluir</h2>
-      </a>
+      </div>
+      <div class="box">
+        <a href="alterar.php">
+          <i class="fa-solid fa-file-invoice"></i>
+          <h2>Alterar</h2>
+        </a>
+      </div>
+      <div class="box">
+        <a href="">
+          <i class="fa-solid fa-trash"></i>
+          <h2>Excluir</h2>
+        </a>
+      </div>
     </div>
   </div>
 
